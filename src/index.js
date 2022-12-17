@@ -22,14 +22,20 @@ newImage.firstChild.src = `https://randomfox.ca/images/${random(123, 1)}.jpg`;
 
 const mountNode = document.querySelector("#images");
 
-const button = document.querySelector("button");
-const handlerClick = () => {
+const addImageButton = document.querySelector("#add_button");
+const addImage = () => {
   const newImage = createImageNode();
   mountNode.append(newImage);
   registerImage(newImage);
 };
+addImageButton.addEventListener("click", addImage);
 
-button.addEventListener("click", handlerClick);
+const cleanButton = document.querySelector("#clean_button");
+const cleanImages = () => {
+  mountNode.innerHTML = "";
+};
+
+cleanButton.addEventListener("click", cleanImages);
 
 mountNode.append(newImage);
 registerImage(newImage);
