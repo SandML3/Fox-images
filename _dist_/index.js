@@ -19,6 +19,7 @@ const createImageNode = () => {
 
 const newImage = createImageNode();
 newImage.firstChild.src = `https://randomfox.ca/images/${random(123, 1)}.jpg`;
+
 const mountNode = document.querySelector("#images");
 
 const button = document.querySelector("button");
@@ -31,3 +32,4 @@ const handlerClick = () => {
 button.addEventListener("click", handlerClick);
 
 mountNode.append(newImage);
+registerImage(newImage);
